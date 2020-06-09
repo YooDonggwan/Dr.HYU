@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Hospital</title>
+
+    </head>
+    <body>
+        <h1>병원 페이지</h1>
+        <form id="logout" method="POST" action="/logout">
+            <button type="submit">로그아웃</button>
+        </form>
+        </br></br></br></br>
+        <form id="gomyhosp" method="POST" action="/gomyhosp">
+            내 병원페이지로 가기 (병원정보, 예약자 명단)
+            <input type="text" name="hosp_name" placeholder="내 병원이름" />
+            <button type="submit">내 병원가기</button>
+        </form>
+        </br></br>
+
+        <form id="prescribe" method="POST" action="/go-prescribe">
+            처방전 생성페이지로 이동: 
+            <button type="submit">처방하기</button>
+        </form>
+        </br>
+
+        <form id="prescribe-list" method="POST" action="/search-prescription">
+            처방 기록 확인하기
+            </br>
+            이름:
+            <input type="text" name="patient_name" placeholder="이름">
+            발급 번호:
+            <input type="number" name="code" placeholder="번호">
+            날짜:
+            <input type="text" name="presc_day" placeholder="YYYYMMDDHHMM">
+            <button type="submit">확인하기</button>
+        </form></br></br>
+
+        모든 병원 예약자 명단</br>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        병원 이름
+                    </th>
+                    <th>
+                        환자 성명
+                    </th>
+                    <th>
+                        환자 번호
+                    </th>
+                    <th>
+                        예약 날짜
+                    </th>
+                    <th>
+                        예약 시간
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in reserve %}
+                <tr>
+                    <td>
+                        {{ row[0] }}
+                    </td>
+                    <td>
+                        {{ row[1] }}
+                    </td>
+                    <td>
+                        {{ row[2] }}
+                    </td>
+                    <td>
+                        {{ row[3] }}
+                    </td>
+                    <td>
+                        {{ row[4] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </br></br></br>
+
+        병원별 방문이력</br>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        병원 이름
+                    </th>
+                    <th>
+                        방문 환자
+                    </th>
+                    <th>
+                        환자 핸드폰번호
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in visitor %}
+                <tr>
+                    <td>
+                        {{ row[0] }}
+                    </td>
+                    <td>
+                        {{ row[1] }}
+                    </td>
+                    <td>
+                        {{ row[2] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pharm</title>
+  <script src="http://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+  <script>
+    function makeFrm(){
+        alert("처방이 완료되었습니다!\n약국 초기 페이지로 돌아갑니다.")
+    }
+    </script>
+
+</head>
+<body>
+    <h1>처방 페이지</h1>
+    </br></br></br>
+    <form id="make_medicine" method="POST" action="/make-medicine" onsubmit="return makeFrm();">
+        처방환자명:
+        <input type='text' id='name' name='name' placeholder='환자 이름' />
+        </br>
+        조제연월일:
+        <input type='number' id='make_day' name='make_day' placeholder='YYYYMMDD' />
+        </br>
+        처방 내용:
+        <input type='text' id='comment' name='comment' placeholder='처방 내용' />
+        </br>
+        <button type="submit">처방하기</button>        
+    </form>
+
+    
+
+</body>
+
+</html>

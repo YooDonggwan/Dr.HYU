@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ae01a11268ffab74a2b330854a900671"></script>
+  <script src="http://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+
+  <script src="/static/index.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <h1>처방전 생성 페이지</h1>
+    <form id="make_prescribe" method="POST" action="/make-prescribe">
+        발급 번호:
+        <input type='number' id='code' name='code' placeholder='발급번호' />
+        </br>
+        발급 연월일(입력 예시 - 2000년01월01일01시01분인 경우 200001010101): 
+        <input type='number' id='presc_day' name='presc_day' placeholder='YYYYMMDDHHMM' />
+        </br>
+        성명:
+        <input type='text' id='patient_name' name='patient_name' placeholder='환자 성명' />
+        </br>
+        처방 의약품 명칭:
+        <input type='text' id='medicine' name='medicine' placeholder='약 명칭' />
+        </br>
+        1회 투약량:
+        <input type='number' id='dose' name='dose' placeholder='1회 투약량' />
+        </br>
+        1일 투여횟수:
+        <input type='number' id='num_dose' name='num_dose' placeholder='1일 투여횟수' />
+        </br>
+        총 투약일수:
+        <input type='number' id='total_day' name='total_day' placeholder='총 투약일수' />
+        </br>
+        처방 내용:
+        <input type='text' id='comment' name='comment' placeholder='처방 내용' />
+        </br>
+        <button type="submit">처방전 만들기</button>        
+    </form>
+
+    
+
+</body>
+
+</html>

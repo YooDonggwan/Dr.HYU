@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Hospital</title>
+        <script
+        src="http://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script>
+        </script>
+    </head>
+    <body>
+        <form id="backhosp" method="POST" action="/backhosp">
+            <button type="submit">뒤로가기</button>
+        </form>
+        <h1>처방전 페이지</h1>
+        </br></br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        번호
+                    </th>
+                    <th>
+                        처방 날짜
+                    </th>
+                    <th>
+                        환자 이름
+                    </th>
+                    <th>
+                        병원 이름
+                    </th>
+                    <th>
+                        의약품 명칭
+                    </th>
+                    <th>
+                        1회 투약량
+                    </th>
+                    <th>
+                        1일 투여횟수
+                    </th>
+                    <th>
+                        총 투약일수
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in hosp %}
+                <tr>
+                    <td>
+                        {{ row[0] }}
+                    </td>
+                    <td>
+                        {{ row[1] }}
+                    </td>
+                    <td>
+                        {{ row[2] }}
+                    </td>
+                    <td>
+                        {{ row[3] }}
+                    </td>
+                    <td>
+                        {{ row[4] }}
+                    </td>
+                    <td>
+                        {{ row[5] }}
+                    </td>
+                    <td>
+                        {{ row[6] }}
+                    </td>
+                    <td>
+                        {{ row[7] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+
+</html>

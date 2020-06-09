@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Join</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ae01a11268ffab74a2b330854a900671"></script>
+  <script src="http://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+
+  <script src="/static/index.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <h1>사용자 타입 선택하기</h1>
+
+    <form id="join" method="POST" action="/go-hosppg">
+      <button type="submit">병원</button>
+    </form>
+
+    <form id="join" method="POST" action="/go-patientpg">
+      <button type="submit">환자</button>
+    </form>
+
+    <form id="join" method="POST" action="/go-pharmpg">
+      <button type="submit">약국</button>
+    </form>
+    
+</body>
+
+</html>

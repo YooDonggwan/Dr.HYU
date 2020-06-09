@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Hospital</title>
+        <script
+        src="http://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script>
+            function nopreFrm(){
+                alert("약국 초기 페이지로 돌아갑니다")
+            }
+        </script>
+    </head>
+    <body>
+        <form id="backpharm" method="POST" action="/backpharm">
+            <button type="submit">뒤로가기</button>
+        </form>
+        <h1>처방전 페이지</h1>
+        </br></br>
+        처방전 내용
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        번호
+                    </th>
+                    <th>
+                        처방 날짜
+                    </th>
+                    <th>
+                        환자 이름
+                    </th>
+                    <th>
+                        병원 이름
+                    </th>
+                    <th>
+                        의약품 명칭
+                    </th>
+                    <th>
+                        1회 투약량
+                    </th>
+                    <th>
+                        1일 투여횟수
+                    </th>
+                    <th>
+                        총 투약일수
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in prescription %}
+                <tr>
+                    <td>
+                        {{ row[0] }}
+                    </td>
+                    <td>
+                        {{ row[1] }}
+                    </td>
+                    <td>
+                        {{ row[2] }}
+                    </td>
+                    <td>
+                        {{ row[3] }}
+                    </td>
+                    <td>
+                        {{ row[4] }}
+                    </td>
+                    <td>
+                        {{ row[5] }}
+                    </td>
+                    <td>
+                        {{ row[6] }}
+                    </td>
+                    <td>
+                        {{ row[7] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </br></br></br></br>
+
+        처방 여부 선택</br>
+        <form id="yes-prescribe" method="POST" action="/yes-prescribe">
+            처방가능 환자이름:
+            <input type="text" name="name" placeholder="이름"/>
+            <button type="submit">처방하기</button>
+        </form>
+        </br>
+        <form id="no-prescribe" method="POST" action="/no-prescribe" onsubmit="return nopreFrm();">
+            처방불가 환자이름(선택시 약국 초기페이지로 이동):
+            <input type="text" name="name" placeholder="이름"/>
+            <button type="submit">처방불가</button>
+        </form>
+
+
+        
+    </body>
+
+</html>

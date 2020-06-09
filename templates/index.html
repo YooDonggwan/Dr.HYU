@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ae01a11268ffab74a2b330854a900671"></script>
+  <script src="http://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+
+  <script src="/static/index.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+  <div>
+    <form id="position">
+      <input type='text' id='lat' name='lat' value="37.5585146" />
+      <input type='text' id='lng' name='lng' value="127.0331892" />
+      <button type="submit">바로 가기</button>
+      <button id="here" type="button">내 위치</button>
+    </form>
+  </div>
+  <div id="map" style="width:500px;height:400px;"></div>
+</body>
+
+</html>

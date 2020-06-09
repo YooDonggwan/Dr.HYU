@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ae01a11268ffab74a2b330854a900671"></script>
+  <script src="http://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+
+  <script src="/static/index.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <h1>Dr.HYU</h1>
+    <form id="login" method="POST" action="/login">
+        아이디: 
+        <input type='text' id='local' name='local' placeholder='아이디' />
+        @
+        <input type='text' id='domain' name='domain', placeholder='도메인주소' /><br/>
+        비밀번호: 
+        <input type='text' id='passwd' name='passwd' placeholder='비밀번호' />
+        <button type="submit">로그인</button>
+    </form>
+    <br/><br/>
+    <form id="join" method="POST" action="/call-join">
+      아이디가 없을 경우 회원가입을 눌러주세요
+      <button type="submit">회원가입</button>
+    </form>
+
+</body>
+
+</html>

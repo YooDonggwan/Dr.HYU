@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Hospital</title>
+        <script
+        src="http://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <form id="backpatient" method="POST" action="/backpatient">
+            <button type="submit">뒤로가기</button>
+        </form>
+        <h1>안경원 페이지</h1>
+        </br></br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        안경원 이름
+                    </th>
+                    <th>
+                        안경원 주소
+                    </th>
+                    <th>
+                        안경원 번호
+                    </th>
+                    <th>
+                        영업시간
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in glasses %}
+                <tr>
+                    <td>
+                        {{ row[0] }}
+                    </td>
+                    <td>
+                        {{ row[1] }}
+                    </td>
+                    <td>
+                        {{ row[2] }}
+                    </td>
+                    <td>
+                        {{ row[3] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+
+</html>

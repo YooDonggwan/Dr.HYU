@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>
+            Hospital Result
+        </title>
+    </head>
+    <body>
+    <form id="back" method="POST" action="/backpatient">
+      <button type="submit">뒤로가기</button>
+    </form>
+        <h1>검색 결과</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        No.
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in hame %}
+                <tr>
+                    <td>
+                        {{ row['rownum'] }}
+                    </td>
+                    <td>
+                        {{ row['name'] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

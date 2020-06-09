@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Join</title>
+        <script src="http://code.jquery.com/jquery-3.4.1.slim.js"
+            integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+
+        <script>
+            function usertypeFrm(){
+                alert("유저타입을 정한 아이디로 다시 로그인해주세요!")
+            }
+        
+        </script>
+
+    </head>
+    <body>
+        <h1>이용자 타입 선택</h1>
+            로그인 시 사용자 타입을 정하지 않아 사용자 타입을 정해주어야 합니다.<br/>
+            재 로그인후 사용자 타입을 정해주세요.<br/><br/>
+            <form id="usertype" method='POST' action='/input_usertype' onsubmit="return usertypeFrm();">
+                아이디: 
+                <input type='text' id='local' name='local' placeholder='아이디' />
+                @
+                <input type='text' id='domain' name='domain', placeholder='도메인주소' /><br/>
+                비밀번호: 
+                <input type='text' id='passwd' name='passwd' placeholder='비밀번호' /><br/>
+                사용자 타입(가능한 타입 : 병원, 환자, 약국): 
+                <input type='text' id='usertype' name='usertype' placeholder='사용자 타입' />
+                <button type="submit">타입입력</button>
+            </form>
+    </body>
+</html>

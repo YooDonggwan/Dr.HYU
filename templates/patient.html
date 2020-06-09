@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Patient</title>
+  <script
+    src="http://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script>
+   
+    function checkFrm(){
+        var checki = {{check}}
+        if(checki[0] == "Yes"){
+            alert("처방이 완료되었습니다!")
+        }
+        else if(checki[0] == "No"){
+            alert("처방이 불가능합니다!")
+        }
+        else{
+            alert("아직 확인 중입니다!")
+        }
+    }
+  </script>
+</head>
+<body>
+    <form id="logout" method="POST" action="/logout">
+        <button type="submit">로그아웃</button>
+    </form>
+    <h1>환자 페이지</h1>
+    
+
+    <form id="recently_hosp" method="POST" action="/recently-hosp">
+        가장 최근 간 병원 확인하기</br>
+        이름:
+        <input type="text" name="patient_name" placeholder="이름" /></br>
+        핸드폰 번호:
+        <input type="text" name="phone" placeholder="010XXXXXXXX" />
+        <button type="submit">확인하기</button>
+    </form>
+    </br></br>
+
+    <form id="search_hosp" method="POST" action="/search-hosp">
+        주변 병원 이름, 진료시간, 진료 가능 과목 검색(예약기능 포함)</br>
+        위치정보 저장이 안 되어 있을 경우 한양대 주변이 기준이 됩니다</br>
+        이름:
+        <input type="text" name="patient_name" placeholder="이름" /></br>
+        핸드폰 번호:
+        <input type="text" name="phone" placeholder="010XXXXXXXX" />
+        <button type="submit">검색하기</button>
+    </form>
+    </br></br>
+    <form id="search_pharm" method="POST" action="/search-pharm">
+        주변 약국 이름, 진료시간 검색(예약기능 포함)</br>
+        위치정보 저장이 안 되어 있을 경우 한양대 주변이 기준이 됩니다</br>
+        이름:
+        <input type="text" name="patient_name" placeholder="이름" /></br>
+        핸드폰 번호:
+        <input type="text" name="phone" placeholder="010XXXXXXXX" />
+        <button type="submit">검색하기</button>
+    </form>
+    </br></br>
+    
+
+    <form id="check_pharm_presc" method="POST" action="/check-presc" onsubmit="return checkFrm();">
+        약국 처방 가능 여부 확인하기(알림창이 뜨지 않으면 처방기록이 없습니다.):
+        <input type="text" name="name" placeholder="이름" />
+        <button type="submit">확인하기</button>
+    </form>
+    </br></br>
+
+    <form id="glasses_list" method="POST" action="/glasses-list">
+        안경원 리스트 페이지로 이동하기
+        <button type="submit">이동하기</button>
+    </form>
+
+</body>
+
+</html>

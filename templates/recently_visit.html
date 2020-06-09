@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>
+            Hospital Result
+        </title>
+    </head>
+    <body>
+    <form id="back" method="POST" action="/backpatient">
+      <button type="submit">뒤로가기</button>
+    </form>
+        <h1>최근 방문 병원 정보</h1>
+        <table>
+        <thead>
+            <tr>
+                <th>
+                    병원이름
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {{ hosp }}
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Hospital</title>
+
+        <script
+        src="http://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script>
+            function delFrm(){
+                alert("예약환자 삭제가 완료되었습니다!\n병원 초기 페이지로 돌아갑니다")
+            }
+        </script>
+    </head>
+    <body>
+        <form id="back" method="POST" action="/backhosp">
+        <button type="submit">뒤로가기</button>
+        </form>
+        <h1>내 병원 페이지</h1>
+        <table>
+        <thead>
+            <tr>
+                <th>
+                    병원이름
+                </th>
+                <th>
+                    전문의원 수
+                </th>
+                <th>
+                    진료 과목
+                </th>
+                <th>
+                    주소
+                </th>
+                <th>
+                    위도
+                </th>
+                <th>
+                    경도
+                </th>
+                <th>
+                    주중 진료시간
+                </th>
+                <th>
+                    주말 진료시간
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in hosp %}
+            <tr>
+                <td>
+                    {{ row[0] }}
+                </td>
+                <td>
+                    {{ row[1] }}
+                </td>
+                <td>
+                    {{ row[2] }}
+                </td>
+                <td>
+                    {{ row[3] }}
+                </td>
+                <td>
+                    {{ row[4] }}
+                </td>
+                <td>
+                    {{ row[5] }}
+                </td>
+                <td>
+                    {{ row[6] }}
+                </td>
+                <td>
+                    {{ row[7] }}
+                </td>
+                <td>
+                    {{ row[8] }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+        </br></br>
+        우리 병원 현재 예약자 명단 보기
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        병원 이름
+                    </th>
+                    <th>
+                        환자 성명
+                    </th>
+                    <th>
+                        환자 핸드폰 번호
+                    </th>
+                    <th>
+                        예약 날짜
+                    </th>
+                    <th>
+                        예약 시간
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in reservelist %}
+                <tr>
+                    <td>
+                        {{ row[0] }}
+                    </td>
+                    <td>
+                        {{ row[1] }}
+                    </td>
+                    <td>
+                        {{ row[2] }}
+                    </td>
+                    <td>
+                        {{ row[3] }}
+                    </td>
+                    <td>
+                        {{ row[4] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </br></br></br></br>
+        <form id="del_reserve" method="POST" action="/del-reserve" onsubmit="return delFrm();">
+            예약자 지우기</br>
+            이름:
+            <input type="text" name="name" placeholder="이름" /></br>
+            핸드폰 번호:
+            <input type="text" name="phone" placeholder="010XXXXXXXX" /></br>
+            <button type="submit">삭제하기</button>
+        </form>
+
+    </body>
+
+</html>
